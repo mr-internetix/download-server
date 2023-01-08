@@ -14,7 +14,7 @@ app.get('/',(req,res)=>{
     
     res.set('Content-Type','application/zip');
     res.set('Content-Disposition',`attachment; filename=download.zip`);
-    res.download(path.resolve('./exams.zip'))
+    res.download(path.resolve('./files.zip'))
 
 })
 
@@ -22,7 +22,7 @@ app.get('/',(req,res)=>{
 
 app.get('/stream',(req,res)=>{
 
-    const stream = fs.createReadStream(path.resolve('./exams.zip'));
+    const stream = fs.createReadStream(path.resolve('./files.zip'));
 
     res.setHeader('Content-Type', 'application/zip');
     res.setHeader('Content-Disposition', 'inline; filename="exams.zip"');
