@@ -34,7 +34,7 @@ app.get('/stream',(req,res)=>{
 
 app.get('/att',(req,res)=>{
     // var up = fs.createReadStream('files.zip', { highWaterMark: 500 }
-    res.sendFile('./files.zip')
+    res.sendFile(path.resolve('./files.zip'))
 
     
 })
