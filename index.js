@@ -17,6 +17,15 @@ app.get('/',(req,res)=>{
 
 })
 
+app.get('/stream',(req,res)=>{
+
+    const stream = fs.createReadStream('./exams.zip');
+
+    res.setHeader('Content-Type', 'application/zip');
+    res.setHeader('Content-Disposition', 'inline; filename="exams.zip"');
+    stream.pipe(res);
+})
+
 
 
 app.listen(PORT, ()=>{
