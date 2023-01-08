@@ -2,7 +2,7 @@ const express = require("express")
 
 const app = express()
 
-const PORT =  process.env.PORT | 500
+const PORT =  process.env.PORT | 5000
 
 
 
