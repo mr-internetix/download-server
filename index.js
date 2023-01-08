@@ -31,6 +31,14 @@ app.get('/stream',(req,res)=>{
 
 
 
+app.get('/att',(req,res)=>{
+
+    res.setHeader('Content-Type', 'application/zip').attachment(path.resolve('./files.zip')).send()
+})
+
+
+
+
 app.listen(PORT, ()=>{
 
     console.log(`server is running on port ${PORT}`)
