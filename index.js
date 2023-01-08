@@ -3,6 +3,7 @@ const fs = require("fs")
 const { Stream } = require("stream")
 const send = require('send')
 const path = require('path')
+const { urlToHttpOptions } = require("url")
 const app = express()
 
 const PORT =  process.env.PORT | 5000
@@ -32,8 +33,10 @@ app.get('/stream',(req,res)=>{
 
 
 app.get('/att',(req,res)=>{
+    // var up = fs.createReadStream('files.zip', { highWaterMark: 500 }
+    res.sendFile('./files.zip')
 
-    res.setHeader('Content-Type', 'application/zip').attachment(path.resolve('./files.zip')).send()
+    
 })
 
 
