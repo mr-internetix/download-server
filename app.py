@@ -17,5 +17,11 @@ def get_file():
     return send_from_directory(app.static_folder, 'first.zip')
 
 
+@app.route('/pdf')
+def get_pdf():
+    filepath = abspath('./dbms.pdf')
+    return send_from_directory(app.static_folder, 'dbms.pdf')
+
+
 if __name__ == '__main__':
     app.run()
